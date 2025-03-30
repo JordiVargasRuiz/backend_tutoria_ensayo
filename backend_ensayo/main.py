@@ -16,9 +16,10 @@ print("API Key cargada:", os.getenv("API_KEY"))
 # Configurar la API Key de Gemini (asegurarte de que esté bien configurada)
 genai.configure(api_key=os.getenv("API_KEY"))
 
-@app.route("/", methods=["GET"])  # Ruta raíz para evitar error 404
+@app.route("/", methods=["GET"])
 def home():
-    return "¡El backend está funcionando correctamente!"
+    return jsonify({"message": "Backend activo"}), 200
+
 
 @app.route("/generar-ensayo", methods=["POST"])
 def generar_ensayo():

@@ -16,6 +16,10 @@ print("API Key cargada:", os.getenv("API_KEY"))
 # Configurar la API Key de Gemini (asegurarte de que esté bien configurada)
 genai.configure(api_key=os.getenv("API_KEY"))
 
+@app.route("/", methods=["GET"])  # Ruta raíz para evitar error 404
+def home():
+    return "¡El backend está funcionando correctamente!"
+
 @app.route("/generar-ensayo", methods=["POST"])
 def generar_ensayo():
     datos = request.json
@@ -55,3 +59,4 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     print(f"🚀 Servidor corriendo en http://0.0.0.0:{port}")
     app.run(host="0.0.0.0", port=port)
+

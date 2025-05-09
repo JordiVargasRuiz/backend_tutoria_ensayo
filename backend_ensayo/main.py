@@ -32,7 +32,7 @@ def generar_ensayo():
 
     try:
         # Usar el modelo de Gemini para generar el ensayo
-        modelo = genai.GenerativeModel("gemini-1.5-pro")  # Usamos el modelo Gemini correcto
+        modelo = genai.GenerativeModel("gemini-2.0-flash")  # Usamos el modelo Gemini correcto
         # Aquí se solicita un ensayo más largo y detallado con más párrafos
         prompt = (f"Escribe un ensayo detallado y largo sobre {tema}. "
                 "El ensayo debe comenzar directamente con la introducción del tema, "
